@@ -1,5 +1,6 @@
 package com.obedcodes.saturn
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -18,12 +19,20 @@ import com.google.firebase.auth.FirebaseUser
 
 class MainActivity : AppCompatActivity() {
 
+
+    /*
+    *
+    *
+    * This activity is part of the security field, befpre the user accesses the application to avoid ...
+    *
+    * but I will be removing it during the beta test*/
     private lateinit var auth: FirebaseAuth
     private lateinit var googleApiClient: GoogleApiClient
 
     private lateinit var emailEditText: EditText
     private lateinit var passwordEditText: EditText
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -58,6 +67,13 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnLogout).setOnClickListener {
             signOut()
         }
+
+        val marketDataButton: Button = findViewById(R.id.btnMarketDataButton)
+        marketDataButton.setOnClickListener {
+            val intent = Intent(this, MarketDataActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun signUpWithEmail() {
@@ -89,6 +105,8 @@ class MainActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         val user = auth.currentUser
                         updateUI(user)
+                        val intent = Intent(this,MiningActivity::class.java)
+                        startActivity(intent)
                     } else {
                         Toast.makeText(this, "Sign In Failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     }
@@ -119,6 +137,8 @@ class MainActivity : AppCompatActivity() {
                 if (result.isSuccess) {
                     val account = result?.signInAccount
                     firebaseAuthWithGoogle(account)
+                    val intent = Intent(this,MiningActivity::class.java)
+                    startActivity(intent)
                 } else {
                     Log.w(TAG, "Google sign in failed")
                 }
@@ -133,6 +153,8 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     val user = auth.currentUser
                     updateUI(user)
+                    val intent = Intent(this,MiningActivity::class.java)
+                    startActivity(intent)
                 } else {
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
                     Toast.makeText(this, "Authentication Failed.", Toast.LENGTH_SHORT).show()

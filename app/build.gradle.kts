@@ -37,6 +37,13 @@ android {
 }
 
 dependencies {
+
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    // Gson for JSON conversion
+    implementation ("com.google.code.gson:gson:2.11.0")
+
+
     // Import the BoM for the Firebase platform
     implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
 

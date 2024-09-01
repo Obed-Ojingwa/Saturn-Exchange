@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1026453816487",
+    "project_id": "obed-studentpair",
+    "storage_bucket": "obed-studentpair.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026453816487:android:75e3ebe90cc877c0a58782",
+        "android_client_info": {
+          "package_name": "com.obedcodes.saturn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026453816487-rjh7941eis2vf1d4kkr616s04018ki93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBToP_Wk4UAanJyAVmLWZiPm6QAYZo-TQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026453816487-3j5k54lhs7vgv52mv6m9u96m83o3vsn4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
