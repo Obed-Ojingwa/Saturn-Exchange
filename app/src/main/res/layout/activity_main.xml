@@ -58,9 +58,21 @@
         android:id="@+id/btnMarketDataButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fetch Market Stats"
+        android:text="Market Stats"
         android:layout_below="@id/btnGoogleSignIn"
         android:layout_margin="16dp"/>
+
+    <Button
+        android:id="@+id/BtnMining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="291dp"
+        android:layout_marginBottom="164dp"
+        android:text="Mining" />
 
 
 </RelativeLayout>

@@ -68,11 +68,18 @@ class MainActivity : AppCompatActivity() {
             signOut()
         }
 
+        val miningButton = findViewById<Button>(R.id.BtnMining)
+        miningButton.setOnClickListener {
+            val intent = Intent(this, MiningActivity::class.java)
+            startActivity(intent)
+        }
+
         val marketDataButton: Button = findViewById(R.id.btnMarketDataButton)
         marketDataButton.setOnClickListener {
             val intent = Intent(this, MarketDataActivity::class.java)
             startActivity(intent)
         }
+
 
     }
 
