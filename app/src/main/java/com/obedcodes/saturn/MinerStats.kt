@@ -41,4 +41,7 @@ data class MarketDataResponse(
     val solana: CryptoPrice?,
     val polygon: CryptoPrice?
 )
+data class Coin(
+    val usd: Double
+)
 

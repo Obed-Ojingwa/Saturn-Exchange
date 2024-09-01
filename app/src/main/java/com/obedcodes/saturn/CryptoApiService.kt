@@ -14,3 +14,12 @@ interface CryptoApiService {
     ): Call<MarketDataResponse>
 }
 
+interface CryptoApiServices {
+    @GET("v1/cryptocurrency/quotes/latest")
+    fun getCryptoPrices(
+        @Query("symbol") symbols: String,
+        @Query("convert") currency: String = "USD"
+    ): Call<MarketDataResponse>
+}
+
+

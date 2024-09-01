@@ -76,14 +76,15 @@ class MarketDataActivity : AppCompatActivity() {
         for ((name, price) in coins) {
             if (price != null) {
                 val lastPrice = lastPrices[name] ?: price
-                val color = if (price > lastPrice) Color.GREEN else if (price < lastPrice) Color.RED else Color.BLACK
+                val color = when {
+                    price > lastPrice -> Color.GREEN
+                    price < lastPrice -> Color.RED
+                    else -> Color.BLACK
+                }
 
-                // Update the last price for comparison in the next update
                 lastPrices[name] = price
 
-                sb.append("$name: ").append("$price USD")
-                    .append("\n")
-                sb.append("\n")
+                sb.append("$name: ").append("$price USD").append("\n")
             }
         }
 
